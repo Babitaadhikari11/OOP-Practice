@@ -1,0 +1,232 @@
+1. c
+2. b
+3. c
+4. b
+5. a
+6. c
+7. a
+8. b
+9. d
+10. a
+11. c
+12. b
+
+section b
+
+1.  Explain the difference between abstract class and interface in Java. Provide one example for
+    each.
+    Ans: Definition: Abstract class is a class that cannot be instantiated and may contain both abstract and concrete methods however interface is a abstract method which a class must implement only with abstract method
+    Keyword used: Abstract class is declared using the abstract keyword and interface is used declaring the interface keyword.
+    Method types: Abstract class can have both abstract and non-abstract methods however interface can have only abstract methods.
+    examples in AbstractionSectionB and InterfaceSectionB
+2.  Describe the concept of polymorphism in Java with suitable examples. Differentiate between
+    compile-time and runtime polymorphism.
+
+    Ans: Polymorphism means many form in which it allows a single action to behave differently based on the object that invokes it. It enables one interface to be used for general class of actions.
+    There are 2 types of polymorphism. They are:
+    a. Compile-time polymorphism
+    b. Runtime polymorphism
+
+difference between compile time and runtime polymorphism
+
+- Compile time polymorphism is also known as method overloading and runtime polymorphism is known as method overriding
+- Compile time polymorphism is resolved by the compiler at compile time however runtime polymorphism happens at runtime
+- Compile time polymorphism is less flexible as all the things execute at compile time and run time polymorphism is more flexible as all the things execute at run time
+- Interitance is not supported in compile time where as interitance is involved in run time polymorphism.
+
+Section C
+c. Inheritance
+Inheritance in java is a core concept where sub class inherits the property and attributes of parent class.Types of Inheritance:
+
+1. Single level inheritance
+2. Hierarchical Inheritance
+3. multilevel inheritance and Java doesnot support multiple inheritance
+   syntax: access_modifier class parent_class{
+   // statements to be executed
+   }
+   access_modifier class child_class extends parent_class{
+   //statements to be executed
+   }
+   example:
+   public class Parent{
+   public void parentMethod(){
+   System.out.println("parent");
+   }
+   }
+   public class Child extends Parent{
+   public void childMethod(){
+   super.parentMethod();
+   Syste.out.println("child method)
+   }
+   }
+
+<!-- main class -->
+
+public class Main{
+Child obj = new Child();
+obj.childMethod();
+
+}
+a. Final keyword
+A final keyword is used as a non-access modififer used for method, variable or a class.It restricts a user from moditications and inheriting properties.
+Syntax: final data_type variable_name;
+example
+public class Example{
+public static void main(String[] args){
+final int a=10;
+System.out.println("Value of a is "+a);
+}
+}
+b. Getter and Setter methods
+Getter methods are used to read the value of a private variable and setter methods are used to modify the value of private variable. These are the part of encapsulation.
+example:
+public class Person{
+private String name; //private= restricted area
+//getter
+public String getName(){
+return name;
+}
+public void setName(String name){
+this.name=name;
+}
+
+}
+public class Main{
+public static void main(String[] args){
+Person obj= new Person();
+// setting the value for name variable
+obj.setName("Babita");
+System.out.println("The name is :" +obj.setName());
+}
+}
+d. do-while loop
+The do/while loop is a type of while loop. This loop will execute the code block once, before checking if the condition is true. Then it will repeat the long as long as the condition is true.
+syntax:
+do{
+//code block to be executed
+}
+while(condition);
+example:
+public class DoWhile{
+public static void main(String[] args){
+int i=0;
+do{
+System.out.println(i);
+i++;
+}
+}
+while(i<5);
+}
+
+<!-- Section D -->
+
+1.  Create a Java program that demonstrates inheritance:
+    ●
+    Define a superclass Vehicle with attributes brand and a method start().
+    ●
+    Create a subclass Car that adds a model name and overrides the start() method.
+    ●
+    Use the super keyword appropriately.
+    ●
+    Demonstrate the working in the main method.
+    // Superclass vehicle
+    class Vehicle {
+    String number;
+
+        // Constructor
+        Vehicle(String number) {
+            this.number = number;
+        }
+
+        // method to be overridden
+        void start() {
+            System.out.println(number + " vehicle is starting");
+        }
+
+    }
+
+// Subclass
+class Car extends Vehicle {
+String model;
+
+    // Constructor using super to call parent constructor
+    Car(String number, String model) {
+        super(number); // calls Vehicle constructor
+        this.model = model;
+    }
+
+    // Overriding the start() method
+    @Override
+    void start() {
+        super.start(); // call Vehicle's start() method
+        System.out.println("Car model " + model + " is now running.");
+    }
+
+}
+
+// Main class
+public class Main {
+public static void main(String[] args) {
+Car myCar = new Car("BA2304", "Corolla");
+myCar.start(); // Calls overridden method
+}
+}
+
+2.  Design a Java class called Student with attributes id, name, and marks:
+    ●
+    Create a method to calculate the grade based on marks using this rule:
+    ○
+    80+ : A
+    ○
+    60–79 : B
+    ○
+    40–59 : C
+    ○
+    Below 40 : F
+    ●
+    Create multiple student objects and display their grades.
+    class Student {
+    int id;
+    String name;
+    int marks;
+
+        // Constructor
+        Student(int id, String name, int marks) {
+            this.id = id;
+            this.name = name;
+            this.marks = marks;
+        }
+
+        // Method to calculate grade
+        String calculateGrade() {
+            if (marks >= 80) {
+                return "A";
+            } else if (marks >= 60) {
+                return "B";
+            } else if (marks >= 40) {
+                return "C";
+            } else {
+                return "F";
+            }
+        }
+
+        // Method to display student details
+        void displayInfo() {
+            System.out.println("ID: " + id + ", Name: " + name + ", Marks: " + marks + ", Grade: " + calculateGrade());
+        }
+
+    }
+
+public class MainClass {
+public static void main(String[] args) {
+// Creating multiple student objects
+Student s1 = new Student(1, "Babita", 85);
+Student s2 = new Student(2, "Prashuna", 72);
+
+        // Display student grades
+        s1.displayInfo();
+        s2.displayInfo();
+
+    }
+
+}
