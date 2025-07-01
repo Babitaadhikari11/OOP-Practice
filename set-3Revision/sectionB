@@ -1,0 +1,73 @@
+1.  Explain method overloading in Java with examples. How is it different from method
+    overriding?
+    ans: Method overloading is a feature that allows us to define multiple methods with the same name but different para meters within a class. It is also known as Compile-time polymorphism. There are different ways of method overloading in java.They are
+
+    - changing the number of parameters
+    - changing the data types of the arguments
+    - changing the order of the parameters of method
+      syntax:
+      class ClassName{
+      return_type methodName(param1, param2,... param_n){
+      //statements
+      }
+      return_type methodName(different_param1, different_param2,..... different_param_n){
+      //statements
+      }
+      }
+      example: changing the data types of the argument types
+      public class Sum{
+      //first method with int datatype
+      public void add(int x, int y){
+      return x+y;
+      }
+      //second method with same name but with double datatype
+      public double add(double x, double y){
+      return x+y;
+      }
+      //main mathod
+      public static void main(String[] args){
+      //creating object of class Sum
+      Sum obj = new Sum();
+      //adding for first method
+      System.out.println("first method sum :"+obj.add(2,2));
+      //adding for second method
+      System.out.println("second method sum :"+obj.add(1,2));
+      }
+      }
+
+2.  What is the role of the super keyword in Java? Demonstrate its usage with a code example.
+
+    = Super keyword is used while following the concept of inheritence in java. Inheritence ensures that the methods or attributes of the parent class(super class)
+    can be inherited to the child class (sub class)by extending the parent class in the child class. The super keyword is a java reference keyword
+    which refers to the methods and attributes of the immediate parent class/objects. It is used when one needs to call the methods/variables of a super class
+    from a sub class.
+    Whenever the superclass and sub class have the same method/variable name, the super keyword specifies that particular method or variable belongs to the super class
+    avoiding any confusion created.
+
+// Parent/super class
+class Animal{
+String color = "black Animal";
+void walk(){
+System.out.println(" walk Animal ")
+}
+}
+
+// Child/sub class
+class Duck extends Animal{
+String color = "white Duck";
+void walk(){
+System.out.println(" walk or swim ").
+super.walk(); //invokes the method of super class
+System.out.println(super.color); //invokes the color of Animal
+System.out.println(color);
+
+    }
+
+}
+// main class
+public class Main {
+public static void main(String[] args){
+Duck d = new Duck();
+d.walk();
+}
+}

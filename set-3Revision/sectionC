@@ -1,0 +1,119 @@
+Answer any 4 short notes (2 marks each)
+a) Java class and object
+b) Constructor overloading
+c) Access modifiers
+d) Importance of the main method
+e) Logical operators in Java
+
+a) Java class and object
+class is the blueprint of an object that share common characteristics and common properties. It is a user-defined blueprint or prototpye from which objects are created.
+Properties of java classes:
+- It is a prototpye from which objects are created.
+- class doesnot occupy memory.
+- A class in java contain data mebers, methods, constructor and interface.
+syntax: 
+access_modifier class ClassName{
+    data members;
+    methods;
+    constructors;
+}
+
+object in java is a basic unit that represents real-life entities which are the instances of a class that are created to use the attributes and methods of a  class.
+It has state which is represented by attributes of an object, behaviour which is represneted by methods of an object and identity which gives a unique name to an object.
+syntax:
+ClassName objectName = new ClassName();
+example demonstrating class and object
+public class Student{ // class declaration with classname Student
+    // data members
+    int number;
+    public static void main(String[] args){
+        Student stdObj = new Student(); // object creationg with objectname stdObj
+        stdObj.number =10; //assigning value
+        System.out.println("The number is :"+stdObj.number);
+    }
+}
+b.Constructor Overloading
+= Constructor overloading is a technique of having more than one constructor of a class with different parameters.It is used for provoding flexibility
+in object creation and to initiaize objects with different sets of data.This improves code readability and helps avoid redundant code.
+
+//main class
+public class Person 
+{	
+// Declaring a non-parameterized constructor.
+   Person() { 
+      System.out.println("Introduction:");
+   }
+// Declaring one parameterized constructor.
+   Person(String name){
+     System.out.println("Name: " +name);	
+   }
+// Declaring two parameterized constructor.
+   Person(String scname, int rollNo) {
+	 System.out.println("School name: "+scname+ ", "+"Roll no:"+rollNo);
+   }
+
+   //main method
+public static void main(String[] args) 
+{
+  person p1 = new Person(); // calling with zero argument.
+  Person p2 = new Person("Prashuna"); // calling with one argument.
+  Person p3 = new Person("Softwarica", 12); // calling with two arguments.
+ }
+}
+
+c) access modifiers
+Access modifiers are keywords that are used to set the accessibility(visibility) of classes, interface, variable and methods.
+The types of access modifiers are:
+1. Default : if no access modifier is specified, it is considered as default 
+2. Public : It is accessible from any other class in the same package or outside of the package.
+3. Private : It is accessbile only within the class. it is not accessible from outside the class.
+4. Protected : It is accessible within the class, in the same package and also in the subclasses of the class in other packages.
+ syntax:
+ private:
+ private dataType variableName;
+ private returnType methodName(){
+    // method body
+ }
+ public:
+ public dataYpe variableName;
+ public returnType methodName() {
+    // method body
+}
+protected:
+protected dataType variableName;
+protected returnType methodName() {
+    // method body
+}
+default:no keyword is used
+dataType variableName;
+returnType methodName() {
+    // method body
+}
+
+example:
+public class AccessModifierExample{ //classs is public
+    private int num1=10; // private variable
+    protected int num2=20; //protected variable
+    int defaultNum=30; //default access modifier variable
+    // method 
+    public void display(){
+        System.out.println("Private value is :"+num1);
+         System.out.println("protected value is :"+num2);
+          System.out.println("default value is :"+defaultNum);
+    }
+    public static void main(String[] args){
+        AccessModifierExample obj = new AccessModifierExample();
+        obj.display(); //calling the method display
+    }
+}
+*d. Importance of the main method
+= Main method is the entry point for the java application.Without the main method, the Java Virtual Machine (JVM) would not know where to 
+begin the execution of the program, and a runtime error would occur. It acts like the "starting point" or the "gatekeeper" of the program.
+Syntax: public static void main(String[] args){
+    //main code to be executed
+}
+Here "public" is the access modifier which denotes that it can be executed from anywhere. Static allows to call the main method without creating 
+it's object, "void" specifies no return type and String[] args is used to receive command line arguments.*
+
+
+

@@ -1,0 +1,119 @@
+Create a simple Employee Management System using inheritance:
+●
+Define a base class Employee with name and ID.
+●
+Create subclasses FullTimeEmployee and PartTimeEmployee with additional
+attributes.
+●
+Override a method calculateSalary() in each subclass and display the salary.
+// parent class Employee
+class Employee {
+    String name;
+    int id;
+
+    // Constructor
+    Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    // method to be overridden in subclasses
+    void calculateSalary() {
+        System.out.println("Calculating salary for employee");
+    }
+
+    void displayDetails() {
+        System.out.println("Name: " + name + ", ID: " + id);
+    }
+}
+
+// subclass for full-time employee
+class FullTimeEmployee extends Employee {
+    double monthlySalary;
+
+    FullTimeEmployee(String name, int id, double monthlySalary) {
+        super(name, id);
+        this.monthlySalary = monthlySalary;
+    }
+
+    @Override
+    void calculateSalary() {
+        System.out.println("Full-Time Employee Salary: " + monthlySalary);
+    }
+}
+
+// Subclass for part-time employee
+class PartTimeEmployee extends Employee {
+    int hoursWorked;
+    double hourlyRate;
+
+    PartTimeEmployee(String name, int id, int hoursWorked, double hourlyRate) {
+        super(name, id);
+        this.hoursWorked = hoursWorked;
+        this.hourlyRate = hourlyRate;
+    }
+
+    @Override
+    void calculateSalary() {
+        double salary = hoursWorked * hourlyRate;
+        System.out.println("Part-Time Employee Salary: " + salary);
+    }
+}
+
+// Main class to test
+public class EmployeeManagementSystem {
+    public static void main(String[] args) {
+        FullTimeEmployee obj1 = new FullTimeEmployee("Babita", 101, 50000);
+        PartTimeEmployee obj2 = new PartTimeEmployee("Prashuna", 102, 80, 200);
+
+        obj1.displayDetails();
+        obj1.calculateSalary();
+
+       
+
+        obj2.displayDetails();
+        obj2.calculateSalary();
+    }
+}
+
+1.Implement a Java class Calculator that uses method overloading to perform the following:
+● Add two integers
+● Add two doubles
+● Concatenate two strings
+● Demonstrate all methods in the main method
+
+class Calculator {
+
+    // Method 1: Add two integers
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method 2: Add two doubles
+    double add(double a, double b) {
+        return a + b;
+    }
+
+    // Method 3: Concatenate two strings
+    String add(String a, String b) {
+        return a + b;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        // Demonstrating integer addition
+        int sumInt = calc.add(10, 20);
+        System.out.println("Sum of integers: " + sumInt);
+
+        // Demonstrating double addition
+        double sumDouble = calc.add(5.5, 3.2);
+        System.out.println("Sum of doubles: " + sumDouble);
+
+        // Demonstrating string concatenation
+        String resultString = calc.add("Prashuna, ", "Khanal");
+        System.out.println("Concatenated string: " + resultString);
+    }
+}

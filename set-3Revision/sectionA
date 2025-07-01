@@ -1,0 +1,25 @@
+1. b
+2. a
+3. extends
+4. Which access modifier makes a method accessible from any other class?
+- public
+5. Which of the following is not a feature of object-oriented programming?
+- compilation
+6. What is method overriding?
+- Defining a method in a subclass that already exists in the parent class
+7. What will be printed?
+int x = 7;
+- 8
+8. Which of these data types is used to represent a single character in Java?
+- char
+9. What will the following expression return?"Java"
+.length()
+- 4
+10.  Which of the following best describes encapsulation?
+- Writing long code in a single class
+11. Which Java keyword is used to inherit from an interface?
+- implements
+12. Which loop is guaranteed to execute at least once?
+- do-while
+
+
