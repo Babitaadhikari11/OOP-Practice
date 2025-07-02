@@ -1,0 +1,88 @@
+1. Develop a Java program that demonstrates multi-level inheritance:
+   ●
+   Create a base class Animal with method makeSound().
+   ●
+   Create a subclass Mammal and another subclass Dog that overrides the method.
+   ●
+   In the main method, show how overriding works.
+
+   Ans:
+   // Base class
+   class Animal {
+   void makeSound() {
+   System.out.println("Animal makes a sound");
+   }
+   }
+
+// subclass 1
+class Mammal extends Animal {
+@Override
+void makeSound() {
+System.out.println("Mammal makes a sound");
+}
+}
+
+// subclass-2
+class Dog extends Mammal {
+@Override
+void makeSound() {
+System.out.println("Dog barks");
+}
+}
+
+// Main class
+public class InheritanceDemo {
+public static void main(String[] args) {
+// Creating objects of each class
+Animal a = new Animal();
+Mammal m = new Mammal();
+Dog d = new Dog();
+
+        // Method calls
+        a.makeSound();
+        m.makeSound();
+        d.makeSound();
+
+
+    }
+
+}
+output:
+Animal makes a sound  
+Mammal makes a sound  
+Dog barks
+
+3.  Create a program that demonstrates the use of static variables and methods:
+    ●
+    Define a class Counter that tracks how many objects have been created.
+    ●
+    Use a static variable and a static method to display the total count.
+    ●
+    Test it by creating multiple objects in the main method.
+    ans:
+    public class Counter {
+    // Static variable to keep track of how many objects have been created
+    private static int count = 0;
+
+        // Constructor increments count whenever a new object is created
+        public Counter() {
+            count++;  // Increase count by 1
+        }
+
+        // Static method to display the total count of objects created
+        public static void displayCount() {
+            System.out.println("Total objects created: " + count);
+        }
+
+        // Main method to test the Counter class
+        public static void main(String[] args) {
+            // Creating multiple objects of Counter
+            Counter c1 = new Counter();
+            Counter c2 = new Counter();
+            Counter c3 = new Counter();
+
+            // Calling static method to display how many objects were created
+            Counter.displayCount();  // Output: Total objects created: 3
+        }
+
+    }

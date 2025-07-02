@@ -1,0 +1,45 @@
+1. Which of the following keywords is used to define a subclass in Java?
+ans: extends
+
+2. What is the output of the following?
+int x = 3;
+x *= 2 + 5;  // (x(2+5))
+System.out.println(x);
+ans: 21
+
+3. What does the term "object" refer to in object-oriented programming?
+ans : An instance of a class
+
+4. Which operator is used to compare two values for equality?
+ans: == 
+
+5. What does the break statement do in Java loops?
+ans: Exits the loop entirely
+
+6. Which of the following is a valid method signature in Java?
+○ void method(int x)
+○ int method x()
+○ void method = int()
+○ method void(int x)
+ans: void method(int x)
+
+7. What is printed by the following?
+int[] arr = {2, 4, 6};
+System.out.println(arr.length);
+ans: 3
+
+8. Which of the following correctly defines an interface in Java?
+ans: interface InterfaceName {}
+
+9. In Java, how is memory allocated for an object?
+ans: Heap Memory
+
+10. Which concept allows code reuse in OOP?
+ans: Inheritance
+
+11. What does the return keyword do in a method?
+ans: Exits the method and optionally returns a value
+
+12. What is the result of this expression?
+System.out.println("Java" + 10 + 5);
+ans: Java105

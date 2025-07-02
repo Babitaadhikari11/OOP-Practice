@@ -1,0 +1,127 @@
+1. Define encapsulation. How is it implemented in Java? Provide an example using getter
+   and setter methods.
+
+- encapsulation is the bulding of attributes, variables and methods that operate on that data within in a single unit like class.They are use to hide both data and function of related class or objects. To achieve this we must declare class variable as private and give public get and set methods to access and update those private variable.
+  The get method returns the variable value and the set method sets the value.
+  sytnax: public class ClassName{
+  private datatype variableName; //private variable
+  public DataType getVariableName(){ //getter with public accessmodifier
+  //return variableName;
+
+            }
+            public void setVariableName(DataType value){ //setter with public accessmodifier
+              this.variableName = value;
+            }
+
+  }
+  example demonstrating getter and setter
+  //encapsulation class
+
+  public class Student{
+  private String name; //private variables name and age
+  private int age;
+  //public getter method for getting name
+  public String getName(){
+  return name;
+  }
+  //getter method for age
+
+  public int getAge(){
+  return age;
+  }
+  //public setter method for setting name
+  public void setName(String name){
+  this.name=name;
+  }
+  // public setter method for setting age
+  public void setAge(int age){
+  this.age=age;
+  }
+  public static void main(String[] args){
+  Student obj= new Student();
+  //setting value for name
+  obj.setName("babita");
+  //setting value for age
+  obj.setAge(20);
+  //getting the value that has been set for name and age
+  System.out.println("Name" +obj.getName() + " and " + " age "+obj.getAge());
+  }
+  }
+  output : Name : Babita and Age : 20
+  Pros of using encapsulation in java
+
+  - protects data from unauthorized access
+  - helps achieve modularity in code
+  - imporves flexibility
+
+2.  Explain the concept of constructor chaining in Java. Demonstrate it using the this() keyword with code.
+    ans: Constructor chaining is the process of calling one constructor from another constructor within the same class or from parent class. This helps to avoid code duplication and makes code more readable and maintainable.
+    this() is used to call another constructor in the same class, while super() is used to call a constructor from the parent class.
+    syntax: public class ClassName{
+    //default constructor1
+    public ClassName(){
+    this(parameter); //calling constructor2
+    }
+    //constructor 2 with one parameter
+    public ClassName(DataType parameter){
+    this(parameter1, parameter2); //calling constructor 3
+    }
+    //CONSTRUCTOR 3 WITH TWO PARAMETERS
+    public ClassName(DataType parameter1,DataType parameter2 ){
+    //constructor body
+    }
+
+            }
+            example of constructor chaining using this()
+
+            public class Student {
+            private String name;
+            private int age;
+
+            // Default constructor
+            public Student() {
+                this("Ram", 0);  // calls parameterized constructor
+                System.out.println("Default constructor called");
+            }
+
+            // Constructor with one parameter
+            public Student(String name) {
+                this(name, 18);  // calls constructor with tww parameters
+                System.out.println("Single-parameter constructor called");
+            }
+
+            // Constructor with two parameters
+            public Student(String name, int age) {
+                this.name = name;
+                this.age = age;
+                System.out.println("Two-parameter constructor called");
+            }
+
+            public void display() {
+                System.out.println("Name: " + name + ", Age: " + age);
+            }
+
+            // Main method
+            public static void main(String[] args) {
+                Student s1 = new Student();        // Calls default constructor
+                s1.display();
+
+                Student s2 = new Student("Babita"); // Calls constructor with 1 parameter
+                s2.display();
+
+                Student s3 = new Student("Aarav", 21); // Calls constructor with 2 parameters
+                s3.display();
+            }
+
+        }
+
+        output:
+
+    Two-parameter constructor called
+    Default constructor called
+    Name: Ram, Age: 0
+    Two-parameter constructor called
+    Single-parameter constructor called
+    Name: Babita, Age: 18
+    Two-parameter constructor called
+    Name: Aarav, Age: 21

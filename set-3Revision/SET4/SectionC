@@ -1,0 +1,152 @@
+
+
+c. access modifiers
+Access modifiers are keywords that are used to set the accessibility(visibility) of classes, interface, variable and methods.
+The types of access modifiers are:
+1. Default : if no access modifier is specified, it is considered as default 
+2. Public : It is accessible from any other class in the same package or outside of the package.
+3. Private : It is accessbile only within the class. it is not accessible from outside the class.
+4. Protected : It is accessible within the class, in the same package and also in the subclasses of the class in other packages.
+ syntax:
+ private:
+ private dataType variableName;
+ private returnType methodName(){
+    // method body
+ }
+ public:
+ public dataYpe variableName;
+ public returnType methodName() {
+    // method body
+}
+protected:
+protected dataType variableName;
+protected returnType methodName() {
+    // method body
+}
+default:no keyword is used
+dataType variableName;
+returnType methodName() {
+    // method body
+}
+
+example:
+public class AccessModifierExample{ //classs is public
+    private int num1=10; // private variable
+    protected int num2=20; //protected variable
+    int defaultNum=30; //default access modifier variable
+    // method 
+    public void display(){
+        System.out.println("Private value is :"+num1);
+         System.out.println("protected value is :"+num2);
+          System.out.println("default value is :"+defaultNum);
+    }
+    public static void main(String[] args){
+        AccessModifierExample obj = new AccessModifierExample();
+        obj.display(); //calling the method display
+    }
+}
+
+a. Java class and object
+class is the blueprint of an object that share common characteristics and common properties. It is a user-defined blueprint or prototpye from which objects are created.
+Properties of java classes:
+- It is a prototpye from which objects are created.
+- class doesnot occupy memory.
+- A class in java contain data mebers, methods, constructor and interface.
+syntax: 
+access_modifier class ClassName{
+    data members;
+    methods;
+    constructors;
+}
+
+object in java is a basic unit that represents real-life entities which are the instances of a class that are created to use the attributes and methods of a  class.
+It has state which is represented by attributes of an object, behaviour which is represneted by methods of an object and identity which gives a unique name to an object.
+syntax:
+ClassName objectName = new ClassName();
+example demonstrating class and object
+public class Student{ // class declaration with classname Student
+    // data members
+    int number;
+    public static void main(String[] args){
+        Student stdObj = new Student(); // object creationg with objectname stdObj
+        stdObj.number =10; //assigning value
+        System.out.println("The number is :"+stdObj.number);
+    }
+}
+
+d. Use of instanceof operator
+= The instanceof operator is used to check if an object is an instance of a specific class or interface (subclass/implementation).It returns 
+a Boolean value True,if the object is an instance or else returns False.
+
+class Animal{
+    void sound(){
+        System.out.println("Animal makes sound");
+    }
+}
+class Dog extends Animal{
+    void sound(){
+        System.out.println("Barks");
+    }
+}
+public class Main{
+    public static void main(String[]args){
+        Animal a1 = new Animal();
+        Animal a2 = new Dog();
+        System.out.println(a1 instanceof Animal);
+        System.out.println(a2 instanceof Animal);
+    }
+}
+
+e.Abstract class vs Interface
+= Abstract class and interface are core concepts of Abstraction which ensures that only the functional 
+part is exposed to the user keeping the complex implementation part hidden. Abstract class cannot be instantiated and 
+can contain both abstract class and concrete method.Abstract class ensures only partial abstraction and the abstract
+keyword is used to define an abstract class.A class can only inherit from only one abstract class at a time.
+
+Interface supports in full and complete abstraction containing all the abstract methods only, no concrete class
+can be created under interface. A class can implement multiple interface at a time. Since all the methods in it
+are abstract no constructors can be created since, abstract methods cannot be instantiated or doesn't have a body.
+interface keyword is written to create an interface for complete abstraction.
+ // abstract class
+abstract class Animal {
+    // Abstract method
+    abstract void makeSound();
+    // Concrete method
+    void sleep() {
+        System.out.println("Sleeping...");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Bark");
+    }
+}
+
+public class TestAbstract {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.makeSound(); // Output: Bark
+        d.sleep();     // Output: Sleeping...
+    }
+}
+
+//interface
+interface Flyable {
+    void fly();
+}
+
+class Bird implements Flyable {
+    @Override
+    public void fly() {
+        System.out.println("Bird is flying");
+    }
+}
+
+public class TestInterface {
+    public static void main(String[] args) {
+        Bird b = new Bird();
+        b.fly(); // Output: Bird is flying
+    }
+}
